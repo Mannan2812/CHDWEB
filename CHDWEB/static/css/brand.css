@@ -1,0 +1,34 @@
+.header123{
+}
+/* .heading{
+  margin-left: 118px;
+  margin-top: 15px;
+visibility: hidden;
+} */
+.nav-bar-custom{
+  height: 87px;
+}
+.rose_cover{
+  height: 250px;
+  width: 100%;
+}
+.rock_cover{
+  height: 250px;
+  width: 100%;
+}
+.sukhna_cover{
+  height: 250px;
+  width: 100%;
+}
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(http://smallenvelop.com/wp-content/uploads/2014/08/Preloader_11.gif) center no-repeat #fff;
+}

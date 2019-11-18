@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Book Your Ticket</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Cantata+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Imprima" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="../static/ticket/css/bootstrap.min.css" />
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="../static/ticket/css/style.css" />
+
+
+
+</head>
+
+<body>
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-cta">
+						<h1>Make Your Reservation</h1>
+					</div>
+					<div class="booking-form">
+						<form action="" method="post">
+
+							{% csrf_token %}
+							<div class="col-md-8">
+								<div class="form-group">
+									<span class="form-label">Destination</span>
+									{{ form.destination }}
+                  <span class="select-arrow"></span>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<span class="form-label">Visitors</span>
+									{{ form.visitors }}
+
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="form-group">
+									<span class="form-label">Ticket Price</span>
+										<spam id = 'ticket_price' class="form-control">80</span>
+
+
+								</div>
+
+							</div>
+							<div class="col-md-4">
+								<div class="form-group">
+									<span class="form-label">Total Price</span>
+									<span class="form-control" id = "total" max = "200	">20</span>
+								</div>
+							</div>
+							<script type="text/javascript">
+								val = (	document.getElementById('dest').value)
+
+								if(val=="rg"){
+								document.getElementById('ticket_price').innerHTML = 20
+								document.getElementById('visits').onchange = function(){
+										document.getElementById('total').innerHTML = parseInt(document.getElementById('visits').value)*20;
+								}}
+									document.getElementById('dest').onchange = function(){
+										val = (	document.getElementById('dest').value)
+										if(val=="rg"){
+										document.getElementById('ticket_price').innerHTML = 20
+											document.getElementById('total').innerHTML = parseInt(document.getElementById('visits').value)*20;
+												document.getElementById('visits').onchange = function(){
+														document.getElementById('total').innerHTML = parseInt(document.getElementById('visits').value)*20;
+												}
+									}
+
+									else if(val=="rsg"){
+									document.getElementById('ticket_price').innerHTML = 30
+										document.getElementById('total').innerHTML = parseInt(document.getElementById('visits').value)*30;
+											document.getElementById('visits').onchange = function(){
+													document.getElementById('total').innerHTML = parseInt(document.getElementById('visits').value)*30;
+											}
+								}
+
+								if(val=="sl"){
+								document.getElementById('ticket_price').innerHTML = 40
+									document.getElementById('total').innerHTML = parseInt(document.getElementById('visits').value)*40;
+										document.getElementById('visits').onchange = function(){
+												document.getElementById('total').innerHTML = parseInt(document.getElementById('visits').value)*40;
+										}
+							}
+
+							if(val=="it"){
+							document.getElementById('ticket_price').innerHTML = 10
+								document.getElementById('total').innerHTML = parseInt(document.getElementById('visits').value)*10;
+									document.getElementById('visits').onchange = function(){
+											document.getElementById('total').innerHTML = parseInt(document.getElementById('visits').value)*10;
+									}
+						}
+
+
+
+
+
+									}
+
+
+
+						</script>
+							<div class="col-md-4">
+								<div class="form-btn">
+									<button type="submit" class="submit-btn">Generate Ticket</button>
+								</div>
+							</div>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
